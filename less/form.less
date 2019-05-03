@@ -15,29 +15,45 @@
     font-size: 1.6rem;
     cursor: pointer;
     position: absolute;
-    top: 20px;
-    right: 20px;
+    top: 10px;
+    right: 10px;
   }
 
   strong { font-weight: bold; }
 
   form {
-    background: #ccc;
-    padding: 2rem;
+    padding: 4rem;
+    background: #fff;
+    border: 2px solid @main-font-color;
+    position: relative;
+    .radius(1rem);
 
     input {
       margin-right: 1rem;
       padding: 1rem;
       font-size: 1.6rem;
       line-height: 1em;
+      border: 1px solid @main-font-color;
+      .radius(0.4rem);
 
       &::placeholder {
-        color: lighten(@main-font-color, 40%);
+        color: lighten(@main-font-color, 10%);
       }
     }
 
     button {
       .button(0.8rem, 3rem, 6px)
+    }
+
+    @media @phone {
+      padding: 4rem 1rem 1.6rem;
+
+      input { margin-bottom: 2rem; }
+
+      input, button {
+        width: 100%;
+        margin-right: 0;
+      }
     }
   }
 }
