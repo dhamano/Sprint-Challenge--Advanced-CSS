@@ -9,6 +9,7 @@
   text-decoration: none;
   font-weight: bold;
   font-size: 1.6rem;
+  transition: color 0.5s ease-in;
 
   &:hover {
     color: lighten(@main-font-color, 25%);
@@ -17,18 +18,28 @@
 
 .button (@padding-top-bottom: 0.6rem, @padding-sides: 2rem, @radius: 6px) {
   padding: @padding-top-bottom @padding-sides;
-  background: @main-button-color;
+  background-color: @main-button-color;
   text-align: center;
   font-weight: bold;
   color: #fff;
   font-size: 1.8rem;
   border-radius: @radius;
   display: inline-block;
+  border: 1px solid @main-button-color;
   cursor: pointer;
+  transition: background-color 0.5s ease-in, color 0.5s ease-in;
 
   &:hover {
-    background: #fff;
+    background-color: #fff;
     color: @main-button-color;
     border: 1px solid @main-button-color;
   }
+}
+
+.keyframes(@animation-name, @args) {
+  @keyframes @animation-name { @args(); };
+}
+
+.animation(@args) {
+  animation: @args;
 }

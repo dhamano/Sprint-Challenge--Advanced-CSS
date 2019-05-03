@@ -1,7 +1,11 @@
 // Navigation code here
 nav {
+  width: 100%;
+  background-color: #fff;
   .flexed();
   flex-direction: column;
+  position: fixed;
+  top: 0;
 
   h1 {
     margin: 3rem auto 0;
@@ -15,6 +19,13 @@ nav {
 
   ul {
     .flexed();
+  }
+
+  .current {
+    margin: 1.6rem;
+    color: @main-font-color;
+    font-weight: bold;
+    font-size: 1.6rem;
   }
 
   li {
